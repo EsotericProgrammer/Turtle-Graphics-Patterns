@@ -5,8 +5,9 @@ iterations = 1000
 
 lineWidth = 5
 
-dist = 5
-angle = 89
+dist = int(input("Enter a Distance:"))
+angle = int(input("Enter an Angle:"))
+colorDrawMode = input("Enter 'Random' for random colors or 'Rainbow' for rainbow colors:")
 
 colorNames = ["Red", "Green", "Blue", "Yellow", "Orange", "Purple"]
 
@@ -14,9 +15,11 @@ speed(0)
 
 for i in range(iterations):
     #Set color of next line
-    rand = random.randint(1, len(colorNames))
-    #color(colorNames[rand - 1])
-    color(colorNames[i % len(colorNames)])
+    if colorDrawMode == "Random" or "random":
+        rand = random.randint(1, len(colorNames))
+        color(colorNames[rand - 1])
+    elif colorDrawMode == "Rainbow" or "rainbow":
+        color(colorNames[i % len(colorNames)])
 
     #Thickness of next line
     width(lineWidth)
