@@ -1,3 +1,4 @@
+#Version 1.03
 from turtle import *
 import random
 
@@ -15,10 +16,10 @@ speed(0)
 
 for i in range(iterations):
     #Set color of next line
-    if colorDrawMode == "Random" or "random":
+    if colorDrawMode == "Random" or colorDrawMode == "random":
         rand = random.randint(1, len(colorNames))
         color(colorNames[rand - 1])
-    elif colorDrawMode == "Rainbow" or "rainbow":
+    elif colorDrawMode == "Rainbow" or colorDrawMode == "rainbow":
         color(colorNames[i % len(colorNames)])
 
     #Thickness of next line
